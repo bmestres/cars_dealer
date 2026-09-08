@@ -16,14 +16,14 @@ class FilterByYearServiceTest {
     void filterMethodShouldReturnExpectedList() {
 
         List<Car> carsTestList = new ArrayList<>(List.of(
-                new Sedan("SedanBrand", "SedanModel", FuelType.DIESEL, 1999, 675.88),
-                new SportsCar("Porche", "MadeUpModel", FuelType.GASOLINE, 2018, 422.12),
-                new SUV("Toyota", "B5630", FuelType.ELECTRIC, 2004, TractionType._4x2)
+                new Sedan("SedanBrand", "SedanModel", FuelType.DIESEL, 1999, 675.88, CarType.SEDAN),
+                new SportsCar("Porche", "MadeUpModel", FuelType.GASOLINE, 2018, 422.12, CarType.SPORTS_CAR),
+                new SUV("Toyota", "B5630", FuelType.ELECTRIC, 2004, TractionType._4x2, CarType.SUV)
         ));
 
 
         List<Car> carsExpectedList = new ArrayList<Car>(List.of(
-                new SportsCar("Porche", "MadeUpModel", FuelType.GASOLINE, 2018, 422.12)
+                new SportsCar("Porche", "MadeUpModel", FuelType.GASOLINE, 2018, 422.12, CarType.SPORTS_CAR)
         ));
 
         CarRepository carsRepositoryTest = new InMemoryCarRepository(carsTestList);
