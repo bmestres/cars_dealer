@@ -1,6 +1,6 @@
 package domain;
 
-public class SportsCar extends Car{
+public class SportsCar extends Car implements Exportable{
     double maxSpeedInKmH;
 
     public SportsCar(String brand, String model, FuelType fuelType, int manufactureYear, double maxSpeedInKmH) {
@@ -17,5 +17,10 @@ public class SportsCar extends Car{
     @Override
     public String toString() {
         return String.format("%s, %.2f", super.toString(), this.maxSpeedInKmH);
+    }
+
+    @Override
+    public String getExportInfo() {
+        return String.format("Exportable car: %s", this.toString());
     }
 }
