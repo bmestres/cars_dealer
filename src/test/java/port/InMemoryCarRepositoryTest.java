@@ -1,14 +1,13 @@
 package port;
 
-import domain.Car;
-import domain.FuelType;
-import domain.SportsCar;
+import domain.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class InMemoryCarRepositoryTest {
 
@@ -25,8 +24,25 @@ class InMemoryCarRepositoryTest {
     }
 
 
-
     @Test
-    void getAll() {
+    void getAllMethodShouldReturnExpectedList() {
+
+        List<Car> inputList = new ArrayList<>(List.of(
+                new Sedan("BrandName01", "ModelName01", FuelType.ELECTRIC, 2019, 413.47),
+                new SportsCar("BrandName02", "ModelName02", FuelType.DIESEL, 2020, 355.31),
+                new SUV("BrandName03", "ModelName03", FuelType.GASOLINE, 2024, TractionType._4x2)
+        ));
+
+        List<Car> expectedList = new ArrayList<>(List.of(
+                new Sedan("BrandName01", "ModelName01", FuelType.ELECTRIC, 2019, 413.47),
+                new SportsCar("BrandName02", "ModelName02", FuelType.DIESEL, 2020, 355.31),
+                new SUV("BrandName03", "ModelName03", FuelType.GASOLINE, 2024, TractionType._4x2)
+        ));
+
+        InMemoryCarRepository carRepositoryTest = new InMemoryCarRepository(inputList);
+
+        assertThat(carRepositoryTest.getAll())
+                .usingRecursiveComparison()
+                .isEqualTo(expectedList);
     }
 }
