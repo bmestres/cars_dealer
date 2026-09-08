@@ -23,7 +23,7 @@ public class FilterByTypeAndFuelService implements FilterByTypeAndFuelQuery {
                 .getAll()
                 .stream()
                 .filter(car -> carType.isInstance(car))
-                .filter(car -> car.getFuelType().equals(fuelType))
+                .filter(car -> car.getFuelType() == fuelType)
                 .collect(Collectors.toList());
     }
 }
