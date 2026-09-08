@@ -3,10 +3,10 @@ package domain;
 public class SUV extends Car {
     private TractionType tractionType;
 
-    public SUV(String brand, String model, FuelType fuelType, int manufactureYear, TractionType suspensionType) {
+    public SUV(String brand, String model, FuelType fuelType, int manufactureYear, TractionType tractionType) {
         super(brand, model, fuelType, manufactureYear);
 
-        this.tractionType = suspensionType;
+        this.tractionType = tractionType;
     }
 
     @Override
