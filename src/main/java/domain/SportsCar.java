@@ -5,6 +5,10 @@ public class SportsCar extends Car implements Exportable{
 
     public SportsCar(String brand, String model, FuelType fuelType, int manufactureYear, double maxSpeedInKmH) {
         super(brand, model, fuelType, manufactureYear);
+
+        if(maxSpeedInKmH <= 0){
+            throw new IllegalArgumentException("Maximum speed must not be zero or negative");
+        }
         this.maxSpeedInKmH = maxSpeedInKmH;
     }
 

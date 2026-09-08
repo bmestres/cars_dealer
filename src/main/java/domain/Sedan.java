@@ -5,6 +5,11 @@ public class Sedan extends Car{
 
     public Sedan(String brand, String model, FuelType fuelType, int manufactureYear, double trunkCapacityInL) {
         super(brand, model, fuelType, manufactureYear);
+
+        if(trunkCapacityInL <= 0){
+            throw new IllegalArgumentException("Trunk capacity must not be zero or negative");
+        }
+
         this.trunkCapacityInL = trunkCapacityInL;
     }
 
@@ -19,7 +24,7 @@ public class Sedan extends Car{
 
     @Override
     String getDescription() {
-        return String.format("Con su espacionso maletero de %.2f litros y un diseño pensado para el confort, el %s %s " +
+        return String.format("Con su espacioso maletero de %.2f litros y un diseño pensado para el confort, el %s %s " +
                 "es el compañero ideal para viajes familiares y trayectos diarios con estilo",
                 this.trunkCapacityInL, super.getBrand(), super.getModel());
     }

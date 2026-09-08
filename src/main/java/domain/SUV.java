@@ -5,6 +5,7 @@ public class SUV extends Car {
 
     public SUV(String brand, String model, FuelType fuelType, int manufactureYear, TractionType suspensionType) {
         super(brand, model, fuelType, manufactureYear);
+
         this.tractionType = suspensionType;
     }
 
