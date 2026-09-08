@@ -18,7 +18,6 @@ public class FilterByTypeAndFuelService implements FilterByTypeAndFuelQuery {
 
     @Override
     public List<Car> filter(Class <? extends Car> carType, FuelType fuelType) {
-
         return this.cars
                 .getAll()
                 .stream()

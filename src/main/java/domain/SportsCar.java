@@ -20,7 +20,7 @@ public class SportsCar extends Car implements Exportable{
 
     @Override
     public String toString() {
-        return String.format("%s, %.2f", super.toString(), this.maxSpeedInKmH);
+        return String.format("%s, Maximum Speed: %.2f", super.toString(), this.maxSpeedInKmH);
     }
 
     @Override
