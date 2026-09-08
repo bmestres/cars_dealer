@@ -1,13 +1,12 @@
 package port;
 
 import domain.Car;
-import domain.ListAllCarsQuery;
 
 import java.util.List;
 
-public class CarsRepositoryPrinterService implements ListAllCarsQuery {
+public class ConsoleCarPrinter implements ListAllCarsQuery {
 
-    public CarsRepositoryPrinterService() {
+    public ConsoleCarPrinter() {
     }
     @Override
     public void printAll(List<? extends Car> cars) {

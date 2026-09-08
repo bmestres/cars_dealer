@@ -2,13 +2,12 @@ package application;
 
 import domain.Car;
 import domain.CarRepository;
-import domain.FilterByTypeAndFuelQuery;
 import domain.FuelType;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FilterByTypeAndFuelService implements FilterByTypeAndFuelQuery {
+public class FilterByTypeAndFuelService {
 
     CarRepository cars;
 
@@ -16,7 +15,6 @@ public class FilterByTypeAndFuelService implements FilterByTypeAndFuelQuery {
         this.cars = cars;
     }
 
-    @Override
     public List<Car> filter(Class <? extends Car> carType, FuelType fuelType) {
         return this.cars
                 .getAll()
