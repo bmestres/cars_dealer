@@ -2,7 +2,7 @@ package application;
 
 import domain.*;
 import org.junit.jupiter.api.Test;
-import port.InMemoryCarRepository;
+import infrastructure.InMemoryCarRepository;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;

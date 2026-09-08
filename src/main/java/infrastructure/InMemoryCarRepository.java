@@ -1,4 +1,4 @@
-package port;
+package infrastructure;
 
 import domain.Car;
 import domain.CarRepository;
@@ -13,10 +13,6 @@ public class InMemoryCarRepository implements CarRepository {
 
         if(cars == null){
             throw new IllegalArgumentException("List of cars must not be NULL");
-        }
-
-        if(cars.isEmpty()){
-            throw new IllegalArgumentException("List of cars must not be empty");
         }
 
         this.cars = cars;

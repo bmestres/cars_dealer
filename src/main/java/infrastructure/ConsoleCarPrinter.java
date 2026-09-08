@@ -1,14 +1,14 @@
-package port;
+package infrastructure;
 
 import domain.Car;
 
 import java.util.List;
 
-public class ConsoleCarPrinter implements ListAllCarsQuery {
+public class ConsoleCarPrinter {
 
     public ConsoleCarPrinter() {
     }
-    @Override
+
     public void printAll(List<? extends Car> cars) {
         cars.stream().forEach(car -> {System.out.println(car.toString());});
     }

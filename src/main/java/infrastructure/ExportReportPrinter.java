@@ -1,4 +1,4 @@
-package port;
+package infrastructure;
 
 import domain.Exportable;
 

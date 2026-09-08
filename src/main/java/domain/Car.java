@@ -6,8 +6,9 @@ public abstract class Car {
     private String model;
     private FuelType fuelType;
     private int manufactureYear;
+    private CarType carType;
 
-    public Car(String brand, String model, FuelType fuelType, int manufactureYear) {
+    public Car(String brand, String model, FuelType fuelType, int manufactureYear, CarType carType) {
 
 
         if(brand == null){
@@ -34,6 +35,7 @@ public abstract class Car {
         this.model = model;
         this.fuelType = fuelType;
         this.manufactureYear = manufactureYear;
+        this.carType = carType;
     }
 
     public String getBrand() {
@@ -50,6 +52,10 @@ public abstract class Car {
 
     public int getManufactureYear() {
         return manufactureYear;
+    }
+
+    public CarType getCarType() {
+        return carType;
     }
 
     abstract String getDescription();

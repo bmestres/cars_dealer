@@ -3,8 +3,8 @@ package domain;
 public class SUV extends Car {
     private TractionType tractionType;
 
-    public SUV(String brand, String model, FuelType fuelType, int manufactureYear, TractionType tractionType) {
-        super(brand, model, fuelType, manufactureYear);
+    public SUV(String brand, String model, FuelType fuelType, int manufactureYear, TractionType tractionType, CarType carType) {
+        super(brand, model, fuelType, manufactureYear, carType);
 
         this.tractionType = tractionType;
     }

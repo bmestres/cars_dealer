@@ -3,8 +3,8 @@ package domain;
 public class Sedan extends Car{
     private double trunkCapacityInL;
 
-    public Sedan(String brand, String model, FuelType fuelType, int manufactureYear, double trunkCapacityInL) {
-        super(brand, model, fuelType, manufactureYear);
+    public Sedan(String brand, String model, FuelType fuelType, int manufactureYear, double trunkCapacityInL, CarType carType) {
+        super(brand, model, fuelType, manufactureYear, carType);
 
         if(trunkCapacityInL <= 0){
             throw new IllegalArgumentException("Trunk capacity must not be zero or negative");

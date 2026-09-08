@@ -1,4 +1,4 @@
-package port;
+package infrastructure;
 
 import domain.*;
 import org.junit.jupiter.api.Test;
@@ -12,14 +12,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 class InMemoryCarRepositoryTest {
 
     @Test
-    void constructWithNullOrEmptyListReturnsException(){
+    void constructWithNullListReturnsException(){
 
         List<Car> testNullList = null;
-        List<Car> testEmptyList = new ArrayList<>();
         List<Car> testOkList = new ArrayList<>(List.of(new SportsCar("TestBrand", "TestModel", FuelType.GASOLINE, 2026, 325.75)));
 
         assertThrows(IllegalArgumentException.class, ()-> new InMemoryCarRepository(testNullList));
-        assertThrows(IllegalArgumentException.class, ()-> new InMemoryCarRepository(testEmptyList));
         assertDoesNotThrow(()-> new InMemoryCarRepository(testOkList));
     }
 

@@ -3,8 +3,8 @@ package domain;
 public class SportsCar extends Car implements Exportable{
     double maxSpeedInKmH;
 
-    public SportsCar(String brand, String model, FuelType fuelType, int manufactureYear, double maxSpeedInKmH) {
-        super(brand, model, fuelType, manufactureYear);
+    public SportsCar(String brand, String model, FuelType fuelType, int manufactureYear, double maxSpeedInKmH, CarType carType) {
+        super(brand, model, fuelType, manufactureYear, carType);
 
         if(maxSpeedInKmH <= 0){
             throw new IllegalArgumentException("Maximum speed must not be zero or negative");

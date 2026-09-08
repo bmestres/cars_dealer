@@ -2,6 +2,7 @@ package application;
 
 import domain.Car;
 import domain.CarRepository;
+import domain.CarType;
 import domain.FuelType;
 
 import java.util.List;
@@ -15,11 +16,11 @@ public class FilterByTypeAndFuelService {
         this.cars = cars;
     }
 
-    public List<Car> filter(Class <? extends Car> carType, FuelType fuelType) {
+    public List<Car> filter(CarType carType, FuelType fuelType) {
         return this.cars
                 .getAll()
                 .stream()
-                .filter(car -> carType.isInstance(car))
+                .filter(car -> car.getCarType() == carType)
                 .filter(car -> car.getFuelType() == fuelType)
                 .collect(Collectors.toList());
     }
