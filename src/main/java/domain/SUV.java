@@ -1,9 +1,11 @@
 package domain;
 
+import java.time.Year;
+
 public class SUV extends Car {
     private TractionType tractionType;
 
-    public SUV(String brand, String model, FuelType fuelType, int manufactureYear, TractionType tractionType, CarType carType) {
+    public SUV(String brand, String model, FuelType fuelType, Year manufactureYear, TractionType tractionType, CarType carType) {
         super(brand, model, fuelType, manufactureYear, carType);
 
         this.tractionType = tractionType;

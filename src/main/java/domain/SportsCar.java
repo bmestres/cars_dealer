@@ -1,9 +1,11 @@
 package domain;
 
+import java.time.Year;
+
 public class SportsCar extends Car implements Exportable{
     double maxSpeedInKmH;
 
-    public SportsCar(String brand, String model, FuelType fuelType, int manufactureYear, double maxSpeedInKmH, CarType carType) {
+    public SportsCar(String brand, String model, FuelType fuelType, Year manufactureYear, double maxSpeedInKmH, CarType carType) {
         super(brand, model, fuelType, manufactureYear, carType);
 
         if(maxSpeedInKmH <= 0){

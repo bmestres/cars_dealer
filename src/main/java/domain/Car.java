@@ -1,14 +1,16 @@
 package domain;
 
+import java.time.Year;
+
 public abstract class Car {
 
     private String brand;
     private String model;
     private FuelType fuelType;
-    private int manufactureYear;
+    private Year manufactureYear;
     private CarType carType;
 
-    public Car(String brand, String model, FuelType fuelType, int manufactureYear, CarType carType) {
+    public Car(String brand, String model, FuelType fuelType, Year manufactureYear, CarType carType) {
 
 
         if(brand == null){
@@ -27,7 +29,7 @@ public abstract class Car {
             throw new IllegalArgumentException("Model must not be empty");
         }
 
-        if(manufactureYear <= 0){
+        if(manufactureYear.getValue() <= 0){
             throw new IllegalArgumentException("Year of manufacture must not be zero or negative");
         }
 
@@ -50,7 +52,7 @@ public abstract class Car {
         return fuelType;
     }
 
-    public int getManufactureYear() {
+    public Year getManufactureYear() {
         return manufactureYear;
     }
 

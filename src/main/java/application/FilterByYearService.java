@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FilterByYearService {
-    private CarRepository cars;
+    private final CarRepository cars;
 
     public FilterByYearService(CarRepository cars) {
         this.cars = cars;
@@ -18,7 +18,7 @@ public class FilterByYearService {
         return this.cars
                 .getAll()
                 .stream()
-                .filter(car -> car.getManufactureYear() > year)
+                .filter(car -> car.getManufactureYear().getValue() > year)
                 .collect(Collectors.toList());
     }
 }

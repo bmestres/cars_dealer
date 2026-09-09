@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.time.Year;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SedanTest {
@@ -19,7 +21,7 @@ class SedanTest {
             "BrandTest, ModeloTest, 2015, -25,84",
             "BrandTest, ModeloTest, 2015, 0"
     }, nullValues = {"null"})
-    void constructorWithWrongParametersShouldThrowException(String brand, String model, int manufactureYear, double trunkCapacity){
+    void constructorWithWrongParametersShouldThrowException(String brand, String model, Year manufactureYear, double trunkCapacity){
         assertThrows(IllegalArgumentException.class, ()-> new Sedan(brand, model, FuelType.DIESEL, manufactureYear, trunkCapacity, CarType.SEDAN));
         assertDoesNotThrow(()-> new Sedan("OkBrand", "OkModel", FuelType.GASOLINE, 2022, 702.98, CarType.SEDAN));
     }

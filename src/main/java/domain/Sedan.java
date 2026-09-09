@@ -1,9 +1,11 @@
 package domain;
 
+import java.time.Year;
+
 public class Sedan extends Car{
     private double trunkCapacityInL;
 
-    public Sedan(String brand, String model, FuelType fuelType, int manufactureYear, double trunkCapacityInL, CarType carType) {
+    public Sedan(String brand, String model, FuelType fuelType, Year manufactureYear, double trunkCapacityInL, CarType carType) {
         super(brand, model, fuelType, manufactureYear, carType);
 
         if(trunkCapacityInL <= 0){
