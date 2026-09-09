@@ -2,7 +2,7 @@ package application;
 
 import domain.CarRepository;
 
-public class ApplicationService {
+public class CarManagerService {
 
     FilterByTypeAndFuelService filterByTypeAndFuelService;
     FilterByYearService filterByYearService;
