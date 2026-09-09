@@ -7,7 +7,7 @@ import java.util.List;
 
 public class InMemoryCarRepository implements CarRepository {
 
-    private List<Car> cars;
+    private final List<Car> cars;
 
     public InMemoryCarRepository(List<Car> cars) {
 
@@ -16,6 +16,11 @@ public class InMemoryCarRepository implements CarRepository {
         }
 
         this.cars = cars;
+    }
+
+    @Override
+    public void add(Car car) {
+        this.cars.add(car);
     }
 
     @Override

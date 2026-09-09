@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import infrastructure.InMemoryCarRepository;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +17,14 @@ class FilterByYearServiceTest {
     void filterMethodShouldReturnExpectedList() {
 
         List<Car> carsTestList = new ArrayList<>(List.of(
-                new Sedan("SedanBrand", "SedanModel", FuelType.DIESEL, 1999, 675.88, CarType.SEDAN),
-                new SportsCar("Porche", "MadeUpModel", FuelType.GASOLINE, 2018, 422.12, CarType.SPORTS_CAR),
-                new SUV("Toyota", "B5630", FuelType.ELECTRIC, 2004, TractionType._4x2, CarType.SUV)
+                new Sedan("SedanBrand", "SedanModel", FuelType.DIESEL, Year.of(1999), 675.88, CarType.SEDAN),
+                new SportsCar("Porche", "MadeUpModel", FuelType.GASOLINE, Year.of(2018), 422.12, CarType.SPORTS_CAR),
+                new SUV("Toyota", "B5630", FuelType.ELECTRIC, Year.of(2004), TractionType._4x2, CarType.SUV)
         ));
 
 
         List<Car> carsExpectedList = new ArrayList<Car>(List.of(
-                new SportsCar("Porche", "MadeUpModel", FuelType.GASOLINE, 2018, 422.12, CarType.SPORTS_CAR)
+                new SportsCar("Porche", "MadeUpModel", FuelType.GASOLINE, Year.of(2018), 422.12, CarType.SPORTS_CAR)
         ));
 
         CarRepository carsRepositoryTest = new InMemoryCarRepository(carsTestList);

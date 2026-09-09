@@ -12,7 +12,16 @@ public abstract class Car {
 
     public Car(String brand, String model, FuelType fuelType, Year manufactureYear, CarType carType) {
 
+        ensureDataIsValid(brand, model, manufactureYear);
 
+        this.brand = brand;
+        this.model = model;
+        this.fuelType = fuelType;
+        this.manufactureYear = manufactureYear;
+        this.carType = carType;
+    }
+
+    private void ensureDataIsValid(String brand, String model, Year manufactureYear) {
         if(brand == null){
             throw new IllegalArgumentException("Brand must not be NULL");
         }
@@ -32,12 +41,6 @@ public abstract class Car {
         if(manufactureYear.getValue() <= 0){
             throw new IllegalArgumentException("Year of manufacture must not be zero or negative");
         }
-
-        this.brand = brand;
-        this.model = model;
-        this.fuelType = fuelType;
-        this.manufactureYear = manufactureYear;
-        this.carType = carType;
     }
 
     public String getBrand() {
